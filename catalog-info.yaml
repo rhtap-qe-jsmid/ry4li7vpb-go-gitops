@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ry4li7vpb-go-gitops
+  description: This is GitOps manifest for ry4li7vpb-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=ry4li7vpb-go
+    backstage.io/kubernetes-id: ry4li7vpb-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ry4li7vpb-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ry4li7vpb-go
